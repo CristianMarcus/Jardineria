@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Realizar Reserva</title>
+</head>
+<body>
+    <h1>Realizar Reserva para {{ servicio.nombre }}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Confirmar Reserva</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ servicio.nombre }}</title>
+</head>
+<body>
+    <h1>{{ servicio.nombre }}</h1>
+    <img src="{{ servicio.imagen.url }}" alt="{{ servicio.nombre }}" width="300">
+    <p>{{ servicio.descripcion }}</p>
+    <p>Precio: ${{ servicio.precio }}</p>
+    <a href="{% url 'realizar_reserva' pk=servicio.pk %}">Realizar Reserva</a>
+</body>
+</html>

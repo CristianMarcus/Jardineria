@@ -1,0 +1,5 @@
+Página de inicio con información sobre tus servicios.
+Formulario de contacto para que los clientes te consulten.
+Sistema de reservas para que los clientes agenden servicios.
+Galería de trabajos con fotos de proyectos realizados.
+Sistema de presupuestos para que los clientes soliciten cotizaciones.
