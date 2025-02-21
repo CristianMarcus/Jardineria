@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Galería | Jardinero!{% endblock %}
+
+
+{% block content %}
+
+<!-- Sección de Galería -->
+<section class="container my-5 fade-in" id="galeria">
+    <h2 class="text-center">Galería de Trabajos</h2>
+    
+     
+    
+
+
+    <!-- Grid de imágenes -->
+    <div class="gallery-grid">
+        <img src="{% static 'img/podaficus.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/cortepasto.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/limpiando_piscina.gif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/corte_maquina.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/mant_jar.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/decoracion_jardin.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/sistema_riego.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/poda_arboles.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+        <img src="{% static 'img/limpieza_piscina.jfif' %}" alt="Imagen de galería" onclick="openLightbox(this)">
+    </div>
+    <div class="iframe-container text-center my-4">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=116671446591764483" 
+                height="714" 
+                width="100%" 
+                frameborder="0" 
+                scrolling="no"></iframe>
+    </div>
+</section>
+
+<!-- Lightbox modal -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+
+<script>
+    // Función para abrir el lightbox con la imagen seleccionada
+    function openLightbox(imgElement) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        // Mostrar el lightbox y la imagen seleccionada
+        lightbox.style.display = "flex";
+        lightboxImg.src = imgElement.src;
+        
+        // Transición suave de opacidad
+        setTimeout(() => {
+            lightbox.style.opacity = 1;
+        }, 10);
+    }
+
+    // Función para cerrar el lightbox
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        
+        // Desvanecer el lightbox
+        lightbox.style.opacity = 0;
+        setTimeout(() => {
+            lightbox.style.display = "none"; // Ocultar el lightbox después de la animación
+        }, 300);
+    }
+</script>
+
+<script>
+// Bloquear la navegación a Pinterest desde el iframe
+document.addEventListener("DOMContentLoaded", function() {
+    const iframe = document.querySelector(".iframe-container iframe");
+
+    iframe.addEventListener("load", function() {
+        const preventNavigation = () => {
+            iframe.contentWindow.document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault(); // Bloquea la navegación a Pinterest
+                });
+            });
+        };
+
+        try {
+            preventNavigation();
+            iframe.contentWindow.document.addEventListener("DOMSubtreeModified", preventNavigation);
+        } catch (error) {
+            console.warn("No se puede modificar contenido de iframe externo debido a restricciones de seguridad.");
+        }
+    });
+});
+</script>
+
+{% endblock %}

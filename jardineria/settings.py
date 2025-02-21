@@ -20,7 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'django-insecure-rb39n5l)l&t%i)oxdt2!5#h##mu!wxhoh=4^1!ved9=nni69q^'
+=======
+SECRET_KEY = 'django-insecure-n0-=yr@fw(4sc!k98ag0ldk%v0!_wd**+@)iw3=!z6q=8btyv='
+>>>>>>> 70f87db (Agregar la estructura inicial de la aplicación 'pedidos' y la configuración del proyecto 'jardineria')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'core',
+=======
+    'pedidos',
+>>>>>>> 70f87db (Agregar la estructura inicial de la aplicación 'pedidos' y la configuración del proyecto 'jardineria')
 ]
 
 MIDDLEWARE = [
@@ -55,7 +63,11 @@ ROOT_URLCONF = 'jardineria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [],
+=======
+        'DIRS': [ BASE_DIR / 'templates',],  # Ruta al directorio global de templates,
+>>>>>>> 70f87db (Agregar la estructura inicial de la aplicación 'pedidos' y la configuración del proyecto 'jardineria')
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,17 +88,25 @@ WSGI_APPLICATION = 'jardineria.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'jardineria_db',  # Nombre de tu base de datos
         'USER': 'postgres',      # Usuario de PostgreSQL
         'PASSWORD': '1234',  # Contraseña de PostgreSQL
         'HOST': 'localhost',        # Servidor de base de datos
         'PORT': '5432',             # Puerto por defecto de PostgreSQL
+=======
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+>>>>>>> 70f87db (Agregar la estructura inicial de la aplicación 'pedidos' y la configuración del proyecto 'jardineria')
     }
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 70f87db (Agregar la estructura inicial de la aplicación 'pedidos' y la configuración del proyecto 'jardineria')
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -118,6 +138,7 @@ USE_I18N = True
 USE_TZ = True
 
 
+<<<<<<< HEAD
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
@@ -127,6 +148,14 @@ STATIC_ROOT = BASE_DIR / 'static'
 # Configuración para archivos de medios (imagenes de los servicios, por ejemplo)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+=======
+STATIC_URL = 'static/'
+
+if DEBUG:
+    STATICFILES_DIRS = [
+        BASE_DIR / "static",  # Asegúrate de que la ruta sea correcta
+    ]
+>>>>>>> 70f87db (Agregar la estructura inicial de la aplicación 'pedidos' y la configuración del proyecto 'jardineria')
 
 
 # Default primary key field type
