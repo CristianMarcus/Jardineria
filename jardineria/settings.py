@@ -12,7 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'cambia-esto-en-produccion')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = [".onrender.com", "localhost", "127.0.0.1"]
+
 
 # Aplicaciones instaladas
 INSTALLED_APPS = [
@@ -23,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pedidos',
-    'whitenoise.runserver_nostatic',  # Servir estáticos en desarrollo
+    'whitenoise.runserver_nostatic',  
 ]
 
 # Middleware
@@ -59,10 +60,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jardineria.wsgi.application'
 
-# Base de datos: PostgreSQL en producción, SQLite en desarrollo
 DATABASES = {
-    
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # Base de datos local para desarrollo
+    }
 }
+
+
 
 # Validadores de contraseñas
 AUTH_PASSWORD_VALIDATORS = [
