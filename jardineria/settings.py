@@ -9,7 +9,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Seguridad
-SECRET_KEY = os.getenv('SECRET_KEY', 'cambia-esto-en-produccion')
+SECRET_KEY = os.getenv('SECRET_KEY', SECRET_KEY='vRkl_dKEDAVcxa0Gz3WA6C9rSeCapYWNy8yniHdTWjgO995CYcHcuPNhKYNmEdguVc0')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [".onrender.com", "localhost", "127.0.0.1"]
