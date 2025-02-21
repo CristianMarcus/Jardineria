@@ -1,2 +1,4 @@
-web: gunicorn jardineria.wsgi:application
+gunicorn jardineria.wsgi:application
+
+
 
