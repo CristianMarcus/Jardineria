@@ -60,12 +60,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jardineria.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # Base de datos local para desarrollo
-    }
-}
+
 
 
 
@@ -89,8 +84,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Configurar Render o Heroku automáticamente
-django_heroku.settings(locals(), databases=False)  # No sobreescribir DATABASES con Heroku
+
 
 # Configuración de clave primaria por defecto
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
