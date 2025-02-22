@@ -15,7 +15,7 @@ def home(request):
     
     servicios = [
         {"titulo": "Mantenimiento de Jardines", "descripcion": "Cuidamos y mantenemos tus áreas verdes con los mejores estándares.", "imagen": "mant_jar.jfif"},
-        {"titulo": "Mantenimiento de Piscinas", "descripcion": "Limpieza y mantenimiento profesional para que tu piscina luzca impecable.", "imagen": "limpieza_piscina.jfif"},
+        {"titulo": "Mantenimiento de Piscinas", "descripcion": "Limpieza y mantenimiento profesional para que tu piscina luzca impecable.", "imagen": "Limpieza_piscina.jfif"},
         {"titulo": "Poda de Árboles", "descripcion": "Corte y mantenimiento de árboles para mejorar su salud y estética.", "imagen": "poda_arboles.jfif"},
         {"titulo": "Corte de Césped", "descripcion": "Corte de césped profesional para mantener tu jardín siempre verde y bien cuidado.", "imagen": "corte_cesped.jfif"},
         {"titulo": "Poda de Arbustos", "descripcion": "Mantenemos tus arbustos saludables y bien formados con nuestra poda especializada.", "imagen": "poda_arbustos.jfif"},
