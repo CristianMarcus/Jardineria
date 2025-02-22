@@ -22,12 +22,10 @@ __pycache__/
 *.swo
 
 # Ignorar archivos de medios subidos por usuarios
-/media/
-media/
+
 
 # Ignorar archivos estáticos generados automáticamente
-/static/
-staticfiles/
+
 
 # Ignorar configuraciones de IDEs
 .vscode/

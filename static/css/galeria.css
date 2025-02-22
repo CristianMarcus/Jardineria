@@ -1,0 +1,91 @@
+/* Estilo para la cuadrícula de la galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas de igual tamaño */
+    grid-template-rows: repeat(3, 1fr);     /* 3 filas de igual tamaño */
+    gap: 20px;                              /* Espacio entre las imágenes */
+    justify-items: center;                  /* Asegura que las imágenes estén centradas */
+    margin-top: 20px;
+    grid-auto-rows: 200px;                  /* Fija una altura estándar para las filas */
+}
+
+/* Estilo de las imágenes */
+.gallery-grid img {
+    width: 100%;                            /* Asegura que las imágenes llenen el contenedor */
+    height: 100%;                           /* Asegura que las imágenes llenen el contenedor */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    object-fit: cover;                      /* Asegura que la imagen cubra toda el área de la celda */
+}
+
+/* Efecto al pasar el cursor sobre la imagen */
+.gallery-grid img:hover {
+    transform: scale(1.05);                 /* Aumenta ligeramente el tamaño de la imagen */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  /* Sombra suave */
+}
+
+/* Estilo para el lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Opcional: Escala la imagen al hacer hover dentro del lightbox */
+.lightbox img:hover {
+    transform: scale(1.05);
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    height: 500px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: -100px; /* Ajusta para cortar la parte superior */
+    left: 0;
+    width: 100%;
+    height: 714px;
+    pointer-events: auto; /* Permite clics dentro del iframe */
+    border-radius: 10px;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;  /* 1 columna en pantallas pequeñas */
+    }
+}
