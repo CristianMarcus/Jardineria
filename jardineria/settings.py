@@ -1,9 +1,8 @@
 import os
 from pathlib import Path
-import django_heroku
 from dotenv import load_dotenv
 
-# Cargar variables de entorno desde un archivo .env
+# Cargar variables de entorno
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,8 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-#&!@')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = [".onrender.com", "localhost", "127.0.0.1"]
-
+ALLOWED_HOSTS = ["*"]  # Permitir cualquier dominio en Render
 
 # Aplicaciones instaladas
 INSTALLED_APPS = [
@@ -60,9 +58,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jardineria.wsgi.application'
 
-
-
-
+# Base de datos (Evita errores, aunque no usas BD)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Validadores de contraseñas
 AUTH_PASSWORD_VALIDATORS = [
@@ -80,11 +82,8 @@ USE_TZ = True
 
 # Configuración de archivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Solo esta línea en producción
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
 
 # Configuración de clave primaria por defecto
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
