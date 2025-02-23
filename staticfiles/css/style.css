@@ -1,73 +1,69 @@
-/* Estilos generales */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #088b81;
+.fondobody {
+    background: linear-gradient(135deg, #007bff, #00c853) ;
+    background-size: 400% 400%;
+    animation: gradient 6s ease infinite;
 }
-
 /* Navbar */
-.navbar {
-    background: linear-gradient(135deg, #007bff, #00c853);
+.navbar, .custom-navbar {
+    background: transparent; /* Aplica el gradiente de fondo */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 0.8rem 2rem; /* Añade un poco de padding para más espacio */
+    padding: 0.8rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px); /* Agrega un efecto de desenfoque detrás de la barra */
-}
-.navbar .nav-link:hover {
-    color: #f1f1f1; /* Cambia el color al pasar el ratón */
-    transform: translateY(-2px); /* Efecto de elevar el enlace */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    text-align: center;
 }
 
-.navbar-brand {
-    font-weight: 600;
-    color: white !important;
-}
-
-.nav-link {
-    color: white !important;
+/* Navbar links */
+.navbar .nav-link {
+    color: white ;
     font-weight: 500;
     transition: 0.3s;
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
 }
 
-.nav-link:hover {
-    color: #ffeb3b !important;
+.navbar .nav-link:hover {
+    color: #f1f1f1;
+    transform: translateY(-2px);
 }
 
-/* Footer */
-footer {
-    background: #343a40;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px;
+/* Navbar toggler */
+.navbar-toggler {
+    background-color: white;
+    border: 1px solid #ffffff;
 }
 
-/* Botón primario */
-.btn-primary {
-    background: linear-gradient(135deg, #00c853, #007bff);
-    border: none;
-    transition: 0.3s;
+/* Navbar collapse */
+.navbar-collapse {
+    background: linear-gradient(135deg, #007bff, #00c853); /* Aplica el gradiente en dispositivos móviles */
+    padding: 10px;
+    border-radius: 8px;
 }
 
-.btn-primary:hover {
-    background: linear-gradient(135deg, #007bff, #00c853);
-}
-
-/* Animación de fade-in */
-.fade-in {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeIn 0.6s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.5rem 1rem;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .nav-link {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .navbar-toggler {
+        background-color: white;
+        border: 1px solid #ffffff;
+    }
+
+    .navbar-collapse {
+        background: linear-gradient(135deg,  #00c853); /* Aplica el gradiente en dispositivos móviles */
+        padding: 10px;
     }
 }

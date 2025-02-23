@@ -1,6 +1,9 @@
 /* ============================= */
 /* ESTILOS GENERALES */
 /* ============================= */
+.navbarNav {
+    background: linear-gradient(135deg, #007bff, #00c853) !important;
+}
 
 /* Contenedor principal */
 .container {
@@ -64,8 +67,8 @@
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    gap: 15px; /* Espaciado uniforme */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste dinámico */
+    gap: 15px;
     justify-content: center;
     padding: 20px;
 }
@@ -73,8 +76,8 @@
 /* Ajustar las imágenes dentro del grid */
 .gallery-grid img {
     width: 100%;
-    height: 200px; /* Mantiene una altura uniforme */
-    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -112,7 +115,7 @@
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste dinámico */
     gap: 20px;
     padding: 20px;
 }
@@ -147,24 +150,31 @@
 
 @media (max-width: 1024px) {
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .benefits-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .benefits-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .service-card:hover {
-        transform: none; /* Deshabilitar hover en móviles */
+        transform: none;
     }
+}
+/* Ajustar imagen del hero para responsividad */
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Opcional, para esquinas redondeadas */
+    object-fit: cover;
 }

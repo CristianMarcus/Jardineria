@@ -14,6 +14,7 @@
     </div>
 </header>
 
+
 <!-- Sección de Servicios -->
 <section class="container my-5">
     <h2 class="text-center" id="servicios">Nuestros Servicios</h2>
@@ -21,7 +22,8 @@
         {% for servicio in servicios %}
         <div class="col">
             <div class="card shadow-sm service-card">
-                <img src="{% static 'img/'|add:servicio.imagen %}" class="card-img-top" alt="{{ servicio.titulo }}">
+                <img src="{% static 'img/' %}{{ servicio.imagen }}" class="card-img-top" alt="{{ servicio.titulo }}">
+
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ servicio.titulo }}</h5>
                     <p class="card-text">{{ servicio.descripcion }}</p>
