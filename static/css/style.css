@@ -44,84 +44,45 @@
     border-radius: 8px;
 }
 
-/* Botón flotante de WhatsApp-------------------------- */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+/* Ampliar el área de detección */
+.floating-wpp {
+    width: 100px !important;
+    height: 100px !important;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
+/* Evitar que desaparezca el chat si el mouse se mueve fuera del icono */
+.floating-wpp:hover .floating-wpp-popup,
+.floating-wpp-popup:hover {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+}
+/* Cambiar la fuente del mensaje emergente */
+.floating-wpp-popup-message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px; /* Tamaño del texto */
+    color: #000; /* Color del texto */
+    font-weight: bold; /* Negrita */
 }
 
-/* Cuadro de chat */
-.whatsapp-chatbox {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 250px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    flex-direction: column;
-}
-
-.chat-header {
-    background: #25d366;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.chat-header button {
-    background: none;
-    border: none;
-    color: white;
+/* Cambiar la fuente del título */
+.floating-wpp-header {
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
-    cursor: pointer;
-}
-
-.chat-body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.chat-body textarea {
-    width: 100%;
-    height: 60px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-}
-
-.chat-body button {
-    background: #25d366;
     color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
+    font-weight: bold;
+    background-color: #128C7E; /* Color del encabezado */
 }
+
+/* Cambiar la fuente del botón de WhatsApp */
+.floating-wpp-button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: white;
+}
+
+
+
 
 
 
