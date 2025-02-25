@@ -46,8 +46,10 @@
 
 /* Ampliar el área de detección */
 .floating-wpp {
-    width: 100px !important;
-    height: 100px !important;
+    width: 80px !important;
+    height: 80px !important;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin: 10px;
 }
 
 /* Evitar que desaparezca el chat si el mouse se mueve fuera del icono */
