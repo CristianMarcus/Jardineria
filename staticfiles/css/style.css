@@ -1,3 +1,43 @@
+/* Estilos personalizados para el footer */
+.custom-footer {
+    background: linear-gradient(135deg, #343a40, #1d2124); /* Fondo degradado oscuro */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    padding: 20px 0; /* Espaciado superior e inferior */
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); /* Sombra superior */
+    margin-top: 5px;
+}
+
+/* Estilos para el enlace dentro del footer */
+.custom-footer a {
+    color: #25d366; /* Verde de WhatsApp */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom-footer a:hover {
+    color: #1ebe57; /* Color más claro al pasar el mouse */
+    text-decoration: underline;
+}
+
+/* Ajuste para que el footer siempre esté en la parte inferior */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+
+
+
 .fondobody {
     background: linear-gradient(135deg, #007bff, #00c853) ;
     background-size: 400% 400%;
@@ -44,13 +84,17 @@
     border-radius: 8px;
 }
 
-/* Ampliar el área de detección */
 .floating-wpp {
     width: 80px !important;
     height: 80px !important;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    margin: 10px;
+    margin: 40px;
+    padding: auto;
+    right: 20px; /* Posición fija en la pantalla */
+    bottom: 20px;
+    position: fixed;
 }
+
 
 /* Evitar que desaparezca el chat si el mouse se mueve fuera del icono */
 .floating-wpp:hover .floating-wpp-popup,
@@ -82,6 +126,11 @@
     font-size: 14px;
     color: white;
 }
+.path {
+    background: linear-gradient(135deg, #007bff, #00c853) ;
+    background-size: 400% 400%;
+    animation: gradient 6s ease infinite;
+}
 
 
 
@@ -109,5 +158,37 @@
     .navbar-collapse {
         background: linear-gradient(135deg,  #00c853); /* Aplica el gradiente en dispositivos móviles */
         padding: 10px;
+    }
+}
+/* Pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    .floating-wpp {
+        width: 65px !important;
+        height: 65px !important;
+        right: 15px; /* Mover un poco más hacia adentro */
+        bottom: 15px;
+        margin: 10px;
+    }
+}
+
+/* Pantallas extra pequeñas (hasta 480px, como teléfonos en modo vertical) */
+@media (max-width: 480px) {
+    .floating-wpp {
+        width: 55px !important;
+        height: 55px !important;
+        right: 10px;
+        bottom: 10px;
+        margin: 10px;
+    }
+}
+
+/* Pantallas muy grandes (más de 1200px, como monitores grandes) */
+@media (min-width: 1200px) {
+    .floating-wpp {
+        width: 90px !important;
+        height: 90px !important;
+        right: 25px;
+        bottom: 25px;
+        margin: 10px;
     }
 }
