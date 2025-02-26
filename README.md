@@ -7,6 +7,7 @@ Jardinería y Piscinas es una aplicación web desarrollada con **Django** y **Bo
 ## 🚀 Características Implementadas
 
 ✅ **Formulario de Pedidos:** Permite a los clientes solicitar servicios y enviar los datos por WhatsApp.
+✅ **Boton de Whatsapp Flotante:** Acceso directo a la Atención Personalizada.
 ✅ **Diseño Responsivo:** Adaptado para dispositivos móviles y escritorio con Bootstrap.
 ✅ **Galería de Trabajos:** Sección con imágenes de trabajos realizados.
 ✅ **Testimonios de Clientes:** Muestra reseñas reales de clientes satisfechos.
