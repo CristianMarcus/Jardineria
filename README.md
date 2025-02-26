@@ -41,11 +41,13 @@ Jardinería y Piscinas es una aplicación web desarrollada con **Django** y **Bo
 │   ├── views.py            # Lógica de las vistas
 │   ├── urls.py             # Rutas de la aplicación
 ├── 📁 templates
+│   ├── base.html
 ├── 📁 static
 │   ├── 📁 css
 │   │   ├── style.css       # Estilos generales
 │   │   ├── home.css        # Estilos específicos de la página de inicio
 │   │   ├── galeria.css     # Estilos específicos para la galería
+│   ├── 📁 img
 ├── manage.py               # Archivo de gestión de Django
 ```
 
