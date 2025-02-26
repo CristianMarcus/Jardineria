@@ -26,12 +26,21 @@ Jardinería y Piscinas es una aplicación web desarrollada con **Django** y **Bo
 ## 📂 Estructura del Proyecto
 
 ```
-📂 proyecto_jardineria
-├── 📁 core                  # Aplicación principal
-│   ├── 📁 templates/core    # Archivos HTML (home, galeria, etc.)
-│   ├── 📁 static/core       # Archivos CSS, JS e imágenes
+📂 jardineria
+├── 📁 jardineria                  # Aplicación principal
+│   ├── settings.py
 │   ├── views.py            # Lógica de las vistas
 │   ├── urls.py             # Rutas de la aplicación
+├── 📁 Pedidos
+│   ├── 📁 templates
+│   │      ├──  📁 Pedidos
+│   │           ├── home.html
+│   │           ├── galeria.html
+│   │           ├── gracias.html
+│   │           ├── pedido_form
+│   ├── views.py            # Lógica de las vistas
+│   ├── urls.py             # Rutas de la aplicación
+├── 📁 templates
 ├── 📁 static
 │   ├── 📁 css
 │   │   ├── style.css       # Estilos generales
