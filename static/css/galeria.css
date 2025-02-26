@@ -1,12 +1,22 @@
 /* ============================= */
 /* ESTILOS GENERALES */
 /* ============================= */
+body, .navbar, .footer-custom {
+    position: relative; 
+    z-index: 1; /* Para asegurarnos de que estos elementos estén por encima del botón de WhatsApp */
+}
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+}
+
+.galeria-page .whatsapp-container {
+    position: relative;
+    z-index: -1; /* El ícono quedará detrás de las imágenes */
+    margin-top: 20px; /* Ajusta el espacio según sea necesario */
 }
 
 /* 🌟 Barra de navegación */
@@ -231,6 +241,33 @@ body {
         max-width: 70%;
     }
 }
+/* Ajuste del tamaño de fuente en el navbar */
+@media (max-width: 992px) { /* Tablets */
+    .navbar-brand {
+        font-size: 1.2rem; /* Ajuste para tablets */
+    }
+}
+
+@media (max-width: 768px) { /* Celulares medianos */
+    .navbar-brand {
+        font-size: 1rem; /* Ajuste para celulares medianos */
+    }
+}
+
+@media (max-width: 576px) { /* Celulares pequeños */
+    .navbar-brand {
+        font-size: 0.9rem; /* Ajuste para celulares pequeños */
+    }
+}
+
+@media (max-width: 400px) { /* Celulares muy pequeños */
+    .navbar-brand {
+        font-size: 0.8rem; /* Ajuste para celulares muy pequeños */
+    }
+}
+
+
+
 
 /* ============================= */
 /* HERO RESPONSIVO */
@@ -241,3 +278,47 @@ body {
     border-radius: 10px;
     object-fit: cover;
 }
+/* Para la página home.html */
+.home-page .whatsapp-container {
+    position: relative;
+    z-index: -1; /* El ícono quedará detrás de los otros elementos */
+    margin-top: 20px; /* Ajusta el espacio según sea necesario */
+}
+
+/* Para la página galeria.html */
+.galeria-page .whatsapp-container {
+    position: relative;
+    z-index: -1; /* El ícono quedará detrás de las imágenes */
+    margin-top: 20px; /* Ajusta el espacio según sea necesario */
+}
+/* Contenedor del iframe */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según necesites */
+    overflow: hidden;
+    border-radius: 10px; /* Opcional, para esquinas redondeadas */
+    display: flex;
+    justify-content: center;
+}
+
+/* Ajustar el iframe dentro del contenedor */
+.iframe-container iframe {
+    width: 100vw; /* Asegura que ocupe todo el ancho */
+    height: 400px; /* Aumentar para permitir el recorte */
+    position: absolute;
+    top: -100px; /* Ajusta este valor para recortar la parte superior */
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .iframe-container {
+        height: 300px; /* Menor altura en móviles */
+    }
+
+    .iframe-container iframe {
+        height: 500px;
+        top: -100px;
+    }
+}
+

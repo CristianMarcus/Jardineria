@@ -1,10 +1,18 @@
 /* ============================= */
 /* ESTILOS GENERALES */
 /* ============================= */
+body, .navbar, .footer-custom {
+    position: relative; 
+    z-index: 1; /* Para asegurarnos de que estos elementos estén por encima del botón de WhatsApp */
+}
+
 html, body {
     width: 100%;
     overflow-x: hidden; /* Evita desplazamiento horizontal */
     font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -13,11 +21,45 @@ html, body {
     padding: 20px;
 }
 
+
+/* ============================= */
+/* BOTÓN DE WHATSAPP */
+/* ============================= */
+.whatsapp-container {
+    position: fixed;
+    margin-left: 10px;
+    right: 5px;
+    bottom: 20px;
+    z-index: 0;
+    transform: scale3d(0.9, 0.9, 1);
+    transition: transform 0.3s;
+}
+
+#whatsapp-button {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    z-index: 0;
+}
+
+.transparent-button {
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
 /* ============================= */
 /* BARRA DE NAVEGACIÓN */
 /* ============================= */
 .navbar {
     background: linear-gradient(135deg, #007bff, #00c853) !important;
+    padding: 15px 0;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .navbar .navbar-brand {
@@ -32,23 +74,6 @@ html, body {
 
 .navbar-toggler-icon {
     filter: invert(1);
-}
-
-/* Ajuste del menú en dispositivos móviles */
-@media (max-width: 992px) {
-    .navbar-collapse {
-        background: #007bff;
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .navbar-nav .nav-item {
-        margin: 5px 0;
-    }
 }
 
 /* ============================= */
@@ -242,6 +267,80 @@ html, body {
     }
 }
 
+/* Ajustes del botón flotante de WhatsApp en móviles */
+.floating-wpp {
+    position: fixed;
+    width: 65px !important;
+    height: 65px !important;
+    right: 15px;
+    bottom: 15px;
+    z-index: 0;
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.floating-wpp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .floating-wpp {
+        width: 65px !important;
+        height: 65px !important;
+        right: 15px;
+        bottom: 15px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-wpp {
+        width: 55px !important;
+        height: 55px !important;
+        right: 10px;
+        bottom: 10px;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .floating-wpp {
+        width: 90px !important;
+        height: 90px !important;
+        right: 25px;
+        bottom: 25px;
+        margin: 10px;
+    }
+}
+
+/* Ajuste del tamaño de fuente en el navbar */
+@media (max-width: 992px) { /* Tablets */
+    .navbar-brand {
+        font-size: 1.2rem; /* Ajuste para tablets */
+    }
+}
+
+@media (max-width: 768px) { /* Celulares medianos */
+    .navbar-brand {
+        font-size: 1rem; /* Ajuste para celulares medianos */
+    }
+}
+
+@media (max-width: 576px) { /* Celulares pequeños */
+    .navbar-brand {
+        font-size: 0.9rem; /* Ajuste para celulares pequeños */
+    }
+}
+
+@media (max-width: 400px) { /* Celulares muy pequeños */
+    .navbar-brand {
+        font-size: 0.8rem; /* Ajuste para celulares muy pequeños */
+    }
+}
+
+
 /* ============================= */
 /* HERO SECTION */
 /* ============================= */
@@ -250,4 +349,13 @@ html, body {
     height: auto;
     border-radius: 10px;
     object-fit: cover;
+}
+
+
+
+/* Para la página home.html */
+.home-page .whatsapp-container {
+    position: relative;
+    z-index: -1; /* El ícono quedará detrás de los otros elementos */
+    margin-top: 20px; /* Ajusta el espacio según sea necesario */
 }

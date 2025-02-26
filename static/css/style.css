@@ -1,51 +1,23 @@
-/* Estilos personalizados para el footer */
-.custom-footer {
-    background: linear-gradient(135deg, #343a40, #1d2124); /* Fondo degradado oscuro */
-    color: #ffffff; /* Texto blanco */
-    text-align: center;
-    padding: 20px 0; /* Espaciado superior e inferior */
-    font-size: 16px;
-    font-weight: 400;
-    position: relative;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); /* Sombra superior */
-    margin-top: 5px;
-}
-
-/* Estilos para el enlace dentro del footer */
-.custom-footer a {
-    color: #25d366; /* Verde de WhatsApp */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.custom-footer a:hover {
-    color: #1ebe57; /* Color más claro al pasar el mouse */
-    text-decoration: underline;
-}
-
-/* Ajuste para que el footer siempre esté en la parte inferior */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-
-
-
-
+/* ============================= */
+/* Fondo animado de la página */
+/* ============================= */
 .fondobody {
-    background: linear-gradient(135deg, #007bff, #00c853) ;
+    background: linear-gradient(135deg, #007bff, #00c853);
     background-size: 400% 400%;
     animation: gradient 6s ease infinite;
 }
-/* Navbar */
+body, .navbar, .footer-custom, .img {
+    position: relative; 
+    z-index: 1; /* Para asegurarnos de que estos elementos estén por encima del botón de WhatsApp */
+}
+
+
+
+/* ============================= */
+/* Navbar Estilos Generales */
+/* ============================= */
 .navbar, .custom-navbar {
-    background: transparent; /* Aplica el gradiente de fondo */
+    background: transparent; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 0.8rem 2rem;
     position: sticky;
@@ -56,9 +28,23 @@ main {
     text-align: center;
 }
 
-/* Navbar links */
+/* ============================= */
+/* Ajustes del texto en el Navbar */
+/* ============================= */
+.navbar-brand {
+    display: block;
+    max-width: 100%;
+    text-align: center;
+    white-space: normal; /* Permite saltos de línea */
+}
+
+
+
+/* ============================= */
+/* Links del Navbar */
+/* ============================= */
 .navbar .nav-link {
-    color: white ;
+    color: white;
     font-weight: 500;
     transition: 0.3s;
     display: block;
@@ -71,124 +57,186 @@ main {
     transform: translateY(-2px);
 }
 
-/* Navbar toggler */
+/* Navbar Toggler */
 .navbar-toggler {
     background-color: white;
     border: 1px solid #ffffff;
 }
 
-/* Navbar collapse */
+/* Navbar Collapse */
 .navbar-collapse {
-    background: linear-gradient(135deg, #007bff, #00c853); /* Aplica el gradiente en dispositivos móviles */
+    background: linear-gradient(135deg, #007bff, #00c853);
     padding: 10px;
     border-radius: 8px;
 }
 
-.floating-wpp {
-    width: 80px !important;
-    height: 80px !important;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    margin: 40px;
-    padding: auto;
-    right: 20px; /* Posición fija en la pantalla */
-    bottom: 20px;
+/* ============================= */
+/* Estilos del Botón de WhatsApp */
+/* ============================= */
+.whatsapp-container {
     position: fixed;
+    right: 5px;
+    bottom: 20px;
+    z-index: -1; /* Lo ponemos debajo de otros elementos */
+    transform: scale3d(0.9, 0.9, 1);
+    transition: transform 0.3s;
+}
+
+#whatsapp-button {
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+/* Botón WhatsApp transparente */
+.transparent-button {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 
-/* Evitar que desaparezca el chat si el mouse se mueve fuera del icono */
-.floating-wpp:hover .floating-wpp-popup,
-.floating-wpp-popup:hover {
-    display: block !important;
-    opacity: 1;
-    visibility: visible;
-}
-/* Cambiar la fuente del mensaje emergente */
-.floating-wpp-popup-message {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px; /* Tamaño del texto */
-    color: #000; /* Color del texto */
-    font-weight: bold; /* Negrita */
-}
-
-/* Cambiar la fuente del título */
-.floating-wpp-header {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+/* ============================= */
+/* Footer personalizado */
+/* ============================= */
+.footer-custom {
+    background: linear-gradient(135deg, #007bff, #00c853);
     color: white;
-    font-weight: bold;
-    background-color: #128C7E; /* Color del encabezado */
-}
-
-/* Cambiar la fuente del botón de WhatsApp */
-.floating-wpp-button {
-    font-family: 'Open Sans', sans-serif;
+    padding: 15px;
     font-size: 14px;
-    color: white;
-}
-.path {
-    background: linear-gradient(135deg, #007bff, #00c853) ;
-    background-size: 400% 400%;
-    animation: gradient 6s ease infinite;
+    text-align: center;
 }
 
-
-
-
-
-
-/* Ajustes para dispositivos móviles */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-        padding: 0.5rem 1rem;
-    }
-
-    .nav-link {
-        display: block;
-        padding: 10px 0;
-    }
-
-    .navbar-toggler {
-        background-color: white;
-        border: 1px solid #ffffff;
-    }
-
-    .navbar-collapse {
-        background: linear-gradient(135deg,  #00c853); /* Aplica el gradiente en dispositivos móviles */
-        padding: 10px;
-    }
+.footer-custom a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
 }
-/* Pantallas pequeñas (hasta 768px) */
-@media (max-width: 768px) {
-    .floating-wpp {
-        width: 65px !important;
-        height: 65px !important;
-        right: 15px; /* Mover un poco más hacia adentro */
-        bottom: 15px;
-        margin: 10px;
+
+.footer-custom a:hover {
+    color: #ffeb3b;
+    text-decoration: underline;
+}
+
+/* Ajuste del tamaño de fuente en el navbar */
+@media (max-width: 992px) { /* Tablets */
+    .navbar-brand {
+        font-size: 1.2rem; /* Ajuste para tablets */
     }
 }
 
-/* Pantallas extra pequeñas (hasta 480px, como teléfonos en modo vertical) */
-@media (max-width: 480px) {
-    .floating-wpp {
-        width: 55px !important;
-        height: 55px !important;
-        right: 10px;
-        bottom: 10px;
-        margin: 10px;
+@media (max-width: 768px) { /* Celulares medianos */
+    .navbar-brand {
+        font-size: 1rem; /* Ajuste para celulares medianos */
     }
 }
 
-/* Pantallas muy grandes (más de 1200px, como monitores grandes) */
-@media (min-width: 1200px) {
-    .floating-wpp {
-        width: 90px !important;
-        height: 90px !important;
-        right: 25px;
-        bottom: 25px;
-        margin: 10px;
+@media (max-width: 576px) { /* Celulares pequeños */
+    .navbar-brand {
+        font-size: 0.9rem; /* Ajuste para celulares pequeños */
     }
 }
+
+@media (max-width: 400px) { /* Celulares muy pequeños */
+    .navbar-brand {
+        font-size: 0.8rem; /* Ajuste para celulares muy pequeños */
+    }
+}
+/* ============================= */
+/* Estilos del Botón de WhatsApp en móviles */
+/* ============================= */
+@media (max-width: 768px) { /* Dispositivos móviles medianos y pequeños */
+    .whatsapp-container {
+        position: fixed;
+        right: 5px;
+        bottom: 20px;
+        z-index: -1; /* Lo ponemos debajo de otros elementos */
+        transform: scale3d(0.9, 0.9, 1);
+        transition: transform 0.3s;
+    }
+
+    #whatsapp-button {
+        width: 70px;
+        height: 70px;
+        position: relative;
+    }
+
+    /* Botón WhatsApp transparente */
+    .transparent-button {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+/* Para pantallas más pequeñas (como móviles pequeños) */
+@media (max-width: 576px) {
+    .whatsapp-container {
+        right: 5px;
+        bottom: 10px; /* Ajustar la posición para pantallas más pequeñas */
+    }
+
+    #whatsapp-button {
+        width: 60px;
+        height: 60px;
+    }
+}
+/* ============================= */
+/* Estilos del Botón de WhatsApp en móviles */
+/* ============================= */
+@media (max-width: 768px) { /* Dispositivos móviles medianos y pequeños */
+    .whatsapp-container {
+        position: fixed;
+        right: 5px;
+        bottom: 20px;
+        z-index: -1; /* Aseguramos que se ponga debajo */
+        transform: scale3d(0.9, 0.9, 1);
+        transition: transform 0.3s;
+    }
+
+    #whatsapp-button {
+        width: 70px;
+        height: 70px;
+        position: relative;
+    }
+
+    /* Botón WhatsApp transparente */
+    .transparent-button {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+/* Para pantallas más pequeñas (como móviles pequeños) */
+@media (max-width: 576px) {
+    .whatsapp-container {
+        right: 5px;
+        bottom: 10px; /* Ajustar la posición para pantallas más pequeñas */
+        z-index: -1; /* Aseguramos que el botón se quede por debajo de otros elementos */
+    }
+
+    #whatsapp-button {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Asegurarnos de que otros elementos no interfieran */
+body, .navbar, .footer-custom {
+    position: relative; /* Garantizamos que los demás elementos tengan su propio contexto de apilamiento */
+    z-index: 1; /* Para asegurarnos de que estos elementos estén por encima del botón de WhatsApp */
+}
+/* Para la página home.html */
+.home-page .whatsapp-container {
+    position: relative;
+    z-index: -1; /* El ícono quedará detrás de los otros elementos */
+    margin-top: 20px; /* Ajusta el espacio según sea necesario */
+}
+
+/* Para la página galeria.html */
+.galeria-page .whatsapp-container {
+    position: relative;
+    z-index: -1; /* El ícono quedará detrás de las imágenes */
+    margin-top: 20px; /* Ajusta el espacio según sea necesario */
+}
+
+
+
