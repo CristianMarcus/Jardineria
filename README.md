@@ -86,6 +86,7 @@ Abre tu navegador y accede a `http://127.0.0.1:8000/`
 ## 📞 Contacto
 
 Si tienes dudas o sugerencias, puedes contactarme en [cristianmarcus34@gmail.com](mailto\:cristianmarcus34@gmail.com).
+proyecto online: https://jardineria-1.onrender.com/
 
 ---
 
