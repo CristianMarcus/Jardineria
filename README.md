@@ -7,6 +7,7 @@ Jardinería y Piscinas es una aplicación web desarrollada con **Django** y **Bo
 ## 🚀 Características Implementadas
 
 ✅ **Formulario de Pedidos:** Permite a los clientes solicitar servicios y enviar los datos por WhatsApp.
+✅ **Boton de Whatsapp Flotante:** Acceso directo a la Atención Personalizada.
 ✅ **Diseño Responsivo:** Adaptado para dispositivos móviles y escritorio con Bootstrap.
 ✅ **Galería de Trabajos:** Sección con imágenes de trabajos realizados.
 ✅ **Testimonios de Clientes:** Muestra reseñas reales de clientes satisfechos.
@@ -25,17 +26,28 @@ Jardinería y Piscinas es una aplicación web desarrollada con **Django** y **Bo
 ## 📂 Estructura del Proyecto
 
 ```
-📂 proyecto_jardineria
-├── 📁 core                  # Aplicación principal
-│   ├── 📁 templates/core    # Archivos HTML (home, galeria, etc.)
-│   ├── 📁 static/core       # Archivos CSS, JS e imágenes
+📂 jardineria
+├── 📁 jardineria                  # Aplicación principal
+│   ├── settings.py
 │   ├── views.py            # Lógica de las vistas
 │   ├── urls.py             # Rutas de la aplicación
+├── 📁 Pedidos
+│   ├── 📁 templates
+│   │      ├──  📁 Pedidos
+│   │           ├── home.html
+│   │           ├── galeria.html
+│   │           ├── gracias.html
+│   │           ├── pedido_form
+│   ├── views.py            # Lógica de las vistas
+│   ├── urls.py             # Rutas de la aplicación
+├── 📁 templates
+│   ├── base.html
 ├── 📁 static
 │   ├── 📁 css
 │   │   ├── style.css       # Estilos generales
 │   │   ├── home.css        # Estilos específicos de la página de inicio
 │   │   ├── galeria.css     # Estilos específicos para la galería
+│   ├── 📁 img
 ├── manage.py               # Archivo de gestión de Django
 ```
 
@@ -74,6 +86,7 @@ Abre tu navegador y accede a `http://127.0.0.1:8000/`
 ## 📞 Contacto
 
 Si tienes dudas o sugerencias, puedes contactarme en [cristianmarcus34@gmail.com](mailto\:cristianmarcus34@gmail.com).
+proyecto online: https://jardineria-1.onrender.com/
 
 ---
 
