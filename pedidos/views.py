@@ -45,7 +45,7 @@ def pedido_view(request):
             mensaje_codificado = quote_plus(body)
             
             # Crear el enlace de WhatsApp
-            whatsapp_url = f"https://wa.me/5491126884940?text={mensaje_codificado}"
+            whatsapp_url = f"https://wa.me/5491121674114?text={mensaje_codificado}"
             
             # Redirigir a la página de gracias con el whatsapp_url
             return render(request, 'pedidos/gracias.html', {'nombre': nombre, 'whatsapp_url': whatsapp_url})
