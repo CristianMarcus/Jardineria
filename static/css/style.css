@@ -77,21 +77,14 @@ body, .navbar, .footer-custom, .img {
     position: fixed;
     right: 5px;
     bottom: 20px;
-    z-index: -1; /* Lo ponemos debajo de otros elementos */
+    z-index: 1; /* Aseguramos que esté encima de otros elementos */
     transform: scale3d(0.9, 0.9, 1);
     transition: transform 0.3s;
-}
-
-#whatsapp-button {
-    width: 70px;
-    height: 70px;
-    position: relative;
 }
 
 /* Botón WhatsApp transparente */
 .transparent-button {
     opacity: 0.5;
-    pointer-events: none;
 }
 
 

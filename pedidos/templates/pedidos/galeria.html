@@ -42,34 +42,37 @@
         function openLightbox(imgElement) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
-
+    
             // Mostrar el lightbox y la imagen seleccionada
             lightbox.style.display = "flex";
             lightboxImg.src = imgElement.src;
-
+    
+            // Agregar la clase 'show' para mostrar el lightbox
+            lightbox.classList.add('show');
+    
             // Transición suave de opacidad
             setTimeout(() => {
                 lightbox.style.opacity = 1;
             }, 10);
         }
-
+    
         // Función para cerrar el lightbox
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
-
+    
             // Desvanecer el lightbox
             lightbox.style.opacity = 0;
             setTimeout(() => {
-                lightbox.style.display = "none"; // Ocultar el lightbox después de la animación
+                // Ocultar el lightbox después de la animación y eliminar la clase 'show'
+                lightbox.style.display = "none";
+                lightbox.classList.remove('show');
             }, 300);
         }
-    </script>
-
-    <script>
+    
         // Bloquear la navegación a Pinterest desde el iframe
         document.addEventListener("DOMContentLoaded", function () {
             const iframe = document.querySelector(".iframe-container iframe");
-
+    
             iframe.addEventListener("load", function () {
                 const preventNavigation = () => {
                     iframe.contentWindow.document.querySelectorAll("a").forEach(link => {
@@ -78,7 +81,7 @@
                         });
                     });
                 };
-
+    
                 try {
                     preventNavigation();
                     iframe.contentWindow.document.addEventListener("DOMSubtreeModified", preventNavigation);

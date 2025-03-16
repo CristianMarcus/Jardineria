@@ -14,6 +14,35 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.caritafeliz {
+    /* Estilos básicos */
+    border: 3px double #007bff; /* Borde doble azul */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Sombra azul brillante */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave */
+    filter: brightness(1.1); /* Aumenta el brillo */
+    animation: pulse 2s infinite ease-in-out; /* Animación de pulsación */
+}
+
+.caritafeliz:hover {
+    /* Estilos al pasar el mouse */
+    transform: scale(1.1); /* Escala la imagen al pasar el mouse */
+    box-shadow: 5px 5px 15px rgba(0, 123, 255, 0.7); /* Sombra más intensa al pasar el mouse */
+    filter: contrast(1.2); /* Aumenta el contraste al pasar el mouse */
+}
+
+@keyframes pulse {
+    /* Animación de pulsación */
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 .container {
     max-width: 1200px;
