@@ -30,8 +30,7 @@
             frameborder="0" scrolling="no"></iframe>
     </section>
 
-    <!-- Lightbox modal -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
         <img id="lightbox-img" src="" alt="Imagen ampliada">
     </div>
 
@@ -40,33 +39,36 @@
         function openLightbox(imgElement) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
-
+    
             // Mostrar el lightbox y la imagen seleccionada
             lightbox.style.display = "flex";
             lightboxImg.src = imgElement.src;
-
+    
             // Agregar la clase 'show' para mostrar el lightbox
             lightbox.classList.add('show');
-
+    
             // Transición suave de opacidad
             setTimeout(() => {
                 lightbox.style.opacity = 1;
             }, 10);
-
-            // Función para cerrar el lightbox
-            function closeLightbox() {
-                const lightbox = document.getElementById('lightbox');
-
-                // Desvanecer el lightbox
-                lightbox.style.opacity = 0;
-                setTimeout(() => {
-                    // Ocultar el lightbox después de la animación y eliminar la clase 'show'
-                    lightbox.style.display = "none";
-                    lightbox.classList.remove('show');
-                }, 300);
+        }
+    
+        // Función para cerrar el lightbox
+        function closeLightbox(event) {
+            const lightbox = document.getElementById('lightbox');
+    
+            // Verificar si el clic se originó en la imagen
+            if (event.target.id === 'lightbox-img') {
+                return; // No cerrar el lightbox si se hizo clic en la imagen
             }
-
-
+    
+            // Desvanecer el lightbox
+            lightbox.style.opacity = 0;
+            setTimeout(() => {
+                // Ocultar el lightbox después de la animación y eliminar la clase 'show'
+                lightbox.style.display = "none";
+                lightbox.classList.remove('show');
+            }, 300);
         }
     </script>
 </body>
