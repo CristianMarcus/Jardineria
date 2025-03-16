@@ -18,8 +18,8 @@ def home(request):
         {"titulo": "Mantenimiento de Piscinas", "descripcion": "Limpieza y mantenimiento profesional para que tu piscina luzca impecable.", "imagen": "Limpieza_piscina.jfif"},
         {"titulo": "Poda de Árboles", "descripcion": "Corte y mantenimiento de árboles para mejorar su salud y estética.", "imagen": "poda_arboles.jfif"},
         {"titulo": "Corte de Césped", "descripcion": "Corte de césped profesional para mantener tu jardín siempre verde y bien cuidado.", "imagen": "corte_cesped.jfif"},
-        {"titulo": "Poda de Arbustos", "descripcion": "Mantenemos tus arbustos saludables y bien formados con nuestra poda especializada.", "imagen": "poda_arbustos.jfif"},
-        {"titulo": "Sistemas de Riego", "descripcion": "Instalación y mantenimiento de sistemas de riego para un consumo eficiente de agua.", "imagen": "sistema_riego.jfif"},
+        {"titulo": "Poda de Arbustos", "descripcion": "Mantenemos tus arbustos saludables y bien formados con nuestra poda.", "imagen": "poda_arbustos.jfif"},
+        {"titulo": "Sistemas de Riego", "descripcion": "Instalación y mantenimiento de sistemas de riego para un consumo eficiente.", "imagen": "sistema_riego.jfif"},
     ]
     
    

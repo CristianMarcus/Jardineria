@@ -16,9 +16,10 @@ html, body {
 }
 .caritafeliz {
     /* Estilos básicos */
-    border: 3px double #007bff; /* Borde doble azul */
+    margin-bottom: 10px;
+    border: 3px solid #dee6ef; /* Borde doble azul */
     border-radius: 10px; /* Esquinas redondeadas */
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Sombra azul brillante */
+    box-shadow: 0 0 10px rgb(248, 249, 250); /* Sombra azul brillante */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave */
     filter: brightness(1.1); /* Aumenta el brillo */
     animation: pulse 2s infinite ease-in-out; /* Animación de pulsación */
@@ -27,7 +28,7 @@ html, body {
 .caritafeliz:hover {
     /* Estilos al pasar el mouse */
     transform: scale(1.1); /* Escala la imagen al pasar el mouse */
-    box-shadow: 5px 5px 15px rgba(0, 123, 255, 0.7); /* Sombra más intensa al pasar el mouse */
+    box-shadow: 5px 5px 15px rgba(51, 51, 52, 0.7); /* Sombra más intensa al pasar el mouse */
     filter: contrast(1.2); /* Aumenta el contraste al pasar el mouse */
 }
 
@@ -62,6 +63,10 @@ html, body {
     z-index: 0;
     transform: scale3d(0.9, 0.9, 1);
     transition: transform 0.3s;
+}
+
+#testimonios{
+    border-radius: 5px;
 }
 
 #whatsapp-button {
@@ -205,8 +210,8 @@ html, body {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Crea tres columnas de igual ancho */
+    gap: 2px; /* Espacio entre columnas */
     padding: 20px;
 }
 
@@ -216,6 +221,7 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    
 }
 
 .benefit-item:hover {
